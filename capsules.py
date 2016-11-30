@@ -62,7 +62,7 @@ def main():
         screen_times = "%s @ %s" % (date, times[0])
  
       # format quarter and dates for film still ref on series pages
-      img_date = "%s-%s-%s" % (year, date_split[0].zfill(2), date_split[1].zfill(2))
+      img_date = "%s-%s-%s" % (date_split[2], date_split[0].zfill(2), date_split[1].zfill(2))
 
       if quarter == "": # this will only run once 
         month = int(date_split[0])
