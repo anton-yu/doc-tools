@@ -94,7 +94,7 @@ def main():
           <i>{title}</i>
           </h4>
           <p style="text-align:center;" id="film still">
-          <img src="/dev/images/{year}/{quarter}/{date}.jpg" width="100%">
+          <img src="/dev/images/{curr_year}/{quarter}/{date}.jpg" width="100%">
         </p>
          <p style="text-align:center; font-size 14px;" id="capsule">
         <i>({director}, {year})</i> <b>&middot;</b>
@@ -107,6 +107,7 @@ def main():
       formatting = {
         "title": title,
         "year": year,
+        "curr_year": date_split[2],
         "director": director,
         "runtime": runtime,
         "capsule": capsule_italic,
