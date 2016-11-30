@@ -55,11 +55,11 @@ def main():
 
       # format multiple screening times (for Wednesday, Friday, Saturday titles)
       if dow_num == 2: 
-        screen_times = "%s @ %s %s\n" % (date, times[0], times[1])
+        screen_times = "%s @ %s %s" % (date, times[0], times[1])
       elif dow_num == 4 or dow_num == 5:
-        screen_times = "%s @ %s %s <br>\n%s @ %s\n" % (date, times[0], times[1], times[3], times[4])
+        screen_times = "%s @ %s %s <br>\n%s @ %s" % (date, times[0], times[1], times[3], times[4])
       else: 
-        screen_times = "%s @ %s\n" % (date, times[0])
+        screen_times = "%s @ %s" % (date, times[0])
  
       # format quarter and dates for film still ref on series pages
       img_date = "%s-%s-%s" % (year, date_split[0].zfill(2), date_split[1].zfill(2))
@@ -86,7 +86,7 @@ def main():
           thurs2 = 0
           dow_num = 3.2 
 
-      screening = """<h4 style="text-align:center;" id="showtime">
+      screening = """
         <h4 style="text-align:center;" id="showtime">
         {screening_times}
         </h4>
@@ -119,7 +119,7 @@ def main():
       page = pages[dow_num]
       page[1].write(screening.format(**formatting))
 
-      outfile.write("%s\n%s%s\n%s (%s, %s, %s, %s)\n%s\n%s\n\n" % (title, screen_times, loc, capsule, director, year, runtime, format, price, cred))
+      outfile.write("%s\n%s\n%s\n%s (%s, %s, %s, %s)\n%s\n%s\n\n" % (title, screen_times, loc, capsule, director, year, runtime, format, price, cred))
 
   outfile.close()
 
